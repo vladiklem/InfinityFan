@@ -1,0 +1,205 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Lato', serif
+}
+body{
+  overflow: hidden;
+  background-color: #E6E6E6;
+}
+
+#fullscreen{
+  width:100%;
+  height: 100%;
+  background-position: 100% 0%;
+  background-image: url("../dif_stuff/back_iw_sec.jpg");
+  background-size: cover;
+}
+
+.main-container{
+  width:100%;
+}
+
+#con1{
+  opacity: 1;
+  visibility: visible;
+  //display: block;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+#con2{
+  opacity: 0;
+  visibility: hidden;
+  //display:none;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.left-panel{
+  width:50%;
+  height: 500px;
+  display:block;
+  float:left;
+}
+
+.right-panel{
+  width: 50%;
+  height: 500px;
+  display:block;
+  float:right;
+}
+
+.image{
+  height:100%;
+  width:350px;
+  display: block;
+  transition: 0.5s;
+  border: solid white 5px;
+  background-position: center;
+  background-size: cover;
+  position:relative;
+  text-align: center;
+}
+
+#left-img{
+  float:right;
+  border-radius: 10px 0 0 10px;
+  border-right: solid white 2.5px;
+}
+
+#left-img:hover{
+  border-right: solid white 5px;
+  transform: translate(-20px,0) scale(1.05);
+}
+
+#right-img{
+  float: left;
+  border-radius: 0 10px 10px 0;
+  border-left: solid white 2.5px;
+}
+
+#right-img:hover{
+  border-left: solid white 5px;
+  transform: translate(20px,0) scale(1.05);
+}
+
+.image:hover{
+  transform: scale(1.05);
+}
+
+.image:active{
+  transform: scale(1);
+}
+
+ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+ul li{
+  display:inline-block;
+}
+
+.menu{
+  margin: 0 auto;
+  padding:0;
+  //margin-bottom: 20px;
+  background: rgba(34, 34, 34 , 0);
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+
+.logo{
+  height:100px;
+  //margin-top:-22px;
+}
+
+.menu-item{
+  padding: 8px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top:15px;
+}
+
+.main-page{
+  color: #F2D709;
+  border-radius: 7px;
+  border: solid #F2D709 2px;
+  transition: 0.3s;
+}
+
+.main-page:hover{
+  background-color: #F2D709;
+  color: white;
+}
+
+.statistics{
+  color: #CC2816;
+  border-radius: 7px;
+  border: solid #CC2816 2px;
+  transition: 0.3s;
+}
+
+.statistics:hover{
+  background-color: #CC2816;
+  color: white;
+}
+
+h1{
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #888888;
+  font-size: 31px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image h2{
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #888888;
+  font-size: 31px;
+  position: absolute;
+  left: 25px;
+  bottom:60px;
+}
+
+.heroe-card img{
+  height: 100%;
+}
+
+.hero-name{
+  margin-top: 100px;
+}
+
+.hero-card{
+  height:500px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #888888;
+  font-size: 31px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: none;
+}
+
+.list-img{
+  height:100%;
+  width:350px;
+  display: block;
+  transition: 0.5s;
+  border: solid white 5px;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  position:relative;
+  text-align: center;
+  background-color: #F2D709;
+  background-image: url("../heroe_avater/ironman_cartoon.jpg");
+}
+
+#anons{
+  font-size:25px;
+}
+
