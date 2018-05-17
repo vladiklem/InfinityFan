@@ -1,7 +1,11 @@
 var API = require('./API');
+var Random = require("random-js");
+var random = new Random(Random.engines.mt19937().autoSeed());
 var Heroes;
 var contestMembers = [];
 var op1, op2;
+var P1, P2;
+var id1,id2,winId,outputId;
 var left_node = document.getElementById('left-img');
 var right_node = document.getElementById('right-img');
 var list = document.getElementById('res-list');
@@ -18,14 +22,6 @@ var battleLog = {
 };
 
 $(function () {
-    API.getHeroesList(function (err, data) {
-        for(var i = 0;i<data.length;i++){
-            wins.push(0);
-            loses.push(0);
-            userRat.push(0);
-            resList.push(data[i].id);
-        }
-    })
     chooseOpponents()
     $('#left-img').click(function () {
         battleLog.id_1 = op1;
@@ -64,6 +60,10 @@ $(function () {
         document.getElementById('con1').style.paddingBottom = "130px";
         document.getElementById('con2').style.visibility = "visible";
         document.getElementById('con2').style.opacity = "1";
+        var elements = document.getElementsByClassName('removeme');
+        while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+        }
         wins = [];
         loses = [];
         userRat = [];
@@ -72,24 +72,28 @@ $(function () {
             for(var i = 0;i<data.length;i++){
                 wins.push(0);
                 loses.push(0);
-                userRat.push(0);
+                userRat.push(400);
                 resList.push(data[i].id);
             }
         })
         API.getResultsList(function (err, results) {
+            console.log(results);
             for(var i = 0;i<results.length;i++){
-                wins[results[i].winnerId] += 1;
-                if(results[i].winnerId == results.id_1){
-                    loses[results[i].id_2] += 1;
-                }else{
-                    loses[results[i].id_1] += 1;
-                }
-            }
-            for(var i = 0;i<wins.length;i++){
-                if(wins[i] == 0){
-                    userRat[i] = 0
-                }else{
-                    userRat[i] = wins[resList[i]]/(wins[resList[i]]+loses[resList[i]]);
+                id1 = results[i].id_1;
+                id2 = results[i].id_2;
+                winId = results[i].winnerId
+                wins[winId] += 1;
+                P1 = (1.0 / (1.0 + Math.pow(10, ((userRat[id1]-userRat[id2]) / 400))));
+                P2 = (1.0 / (1.0 + Math.pow(10, ((userRat[id2]-userRat[id1]) / 400))));
+
+                if (id1 == winId) {
+                    loses[id2] += 1;
+                    userRat[id1] = userRat[id1] + 40 + (-40 * P1);
+                    userRat[id2] = userRat[id2] - 40 * P2;
+                } else {
+                    loses[id1] += 1;
+                    userRat[id2] = userRat[id2] + 40 + (-40 * P2);
+                    userRat[id1] = userRat[id1] - 40 * P1;
                 }
             }
             var z = 0;
@@ -107,15 +111,20 @@ $(function () {
                     }
                 }
                 var output = randomResults(wins.length);
-                console.log(output);
-                for(var i =0;i<3; i++){
+                for(var j =0;j<3; j++){
+                    for(var i =0;i<resList.length;i++) {
+                        if (resList[i] == output[j]){
+                           outputId = i;
+                        }
+                    }
+                    console.log(outputId);
                     var res_node = card.cloneNode(true);
-                    res_node.getElementsByClassName('hero-name')[0].innerHTML = data[resList[i]].name;
-                    res_node.getElementsByClassName("hero-ur")[0].innerHTML = "User Rating: " + userRat[i].toFixed(4)*100;
-                    res_node.getElementsByClassName("wloses")[0].innerHTML = "Wins/Loses : " + wins[resList[i]] + '/' + loses[resList[i]];
+                    res_node.getElementsByClassName('hero-name')[0].innerHTML = data[resList[outputId]].name;
+                    res_node.getElementsByClassName("hero-ur")[0].innerHTML = "User Rating: " + userRat[outputId].toFixed(2);
+                    res_node.getElementsByClassName("wloses")[0].innerHTML = "Wins/Loses : " + wins[resList[outputId]] + '/' + loses[resList[outputId]];
                     res_node.style.display = 'block';
                     res_node.classList.add('removeme');
-                    res_node.getElementsByClassName("list-img")[0].style.backgroundImage = "url(assets/heroe_avater/" + data[resList[i]].img + ")";
+                    res_node.getElementsByClassName("list-img")[0].style.backgroundImage = "url(assets/heroe_avater/" + data[resList[outputId]].img + ")";
                     list.appendChild(res_node);
                 }
             })
@@ -155,24 +164,24 @@ function chooseOpponents() {
 }
 
 function randomOpponents(max) {
-    var x1 = Math.floor(Math.random() * max);
+    var x1 = random.integer(0, max-1);
     var x2 = x1;
     while (x1==x2){
-        x2 = Math.floor(Math.random() * max);
+        x2 = random.integer(0, max-1);
     }
     var res = [x1 , x2];
     return res;
 }
 
 function randomResults(max) {
-    var y1 = Math.floor(Math.random() * max);
+    var y1 = random.integer(0, max-1);
     var y2 = y1;
     while(y1==y2){
-        y2 = Math.floor(Math.random() * max);
+        y2 = random.integer(0, max-1);
     }
     var y3 = y2;
     while(y1 == y3 || y3 == y2){
-        y3 = Math.floor(Math.random() * max);
+        y3 = random.integer(0, max-1);
     }
     var res2 = [y1 , y2 ,y3];
     return res2;

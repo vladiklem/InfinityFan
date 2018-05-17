@@ -19,6 +19,7 @@
     "grunt-browserify": "^5.3.0",
     "mongoose": "^5.0.16",
     "morgan": "^1.9.0",
+    "random-js": "^1.0.8",
     "require": "^2.4.20",
     "webpack": "^4.6.0"
   },
