@@ -4,8 +4,6 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var app = express();
 
-startServer(4000);
-
 function configureEndpoints(app) {
     var api = require('./api');
 
@@ -22,8 +20,6 @@ function configureEndpoints(app) {
 }
 
 function startServer(port) {
-    var app = express();
-
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs');
 
@@ -38,3 +34,5 @@ function startServer(port) {
         console.log("Server start listening on port " + port);
     });
 }
+
+exports.startServer = startServer;

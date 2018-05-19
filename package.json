@@ -14,17 +14,19 @@
   "license": "ISC",
   "dependencies": {
     "brfs": "^1.6.1",
-    "ejs": "^2.5.9",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "grunt-browserify": "^5.3.0",
-    "mongoose": "^5.0.16",
+    "grunt-contrib-watch-chokidar": "^1.0.0",
+    "mongoose": "^5.1.1",
     "morgan": "^1.9.0",
     "random-js": "^1.0.8",
     "require": "^2.4.20",
-    "webpack": "^4.6.0"
+    "webpack": "^4.8.3"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
-    "webpack-cli": "^2.0.15"
+    "grunt-contrib-watch": "^1.1.0",
+    "webpack-cli": "^2.1.3"
   }
 }

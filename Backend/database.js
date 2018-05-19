@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/BattlesLog');
+mongoose.connect('mongodb://127.0.0.1:27017/DataBase');
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 
@@ -13,7 +13,7 @@ db.once('open', function callback () {
 var one_battle = new mongoose.Schema({
     id_1: {type: Number},
     id_2: {type: Number},
-    winnerId: {type: Number},
+    winnerId: {type: Number}
 });
 
 var One_Battle = mongoose.model('one_battle', one_battle);
