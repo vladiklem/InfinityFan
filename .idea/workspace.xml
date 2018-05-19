@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c690b7-0adf-4774-bec5-98fd464a7972" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/api.js" afterPath="$PROJECT_DIR$/Backend/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/views/mainPage.ejs" afterPath="$PROJECT_DIR$/Backend/views/mainPage.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frontend/src/main.js" afterPath="$PROJECT_DIR$/Frontend/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Frontend/www/assets/less/main.less" afterPath="$PROJECT_DIR$/Frontend/www/assets/less/main.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,8 +51,8 @@
       <file leaf-file-name="mainPage.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Backend/views/mainPage.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+            <state relative-caret-position="189">
+              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -69,8 +71,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Frontend/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="149" column="21" lean-forward="true" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
+            <state relative-caret-position="201">
+              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -79,8 +81,8 @@
       <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Backend/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="165">
+              <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -99,8 +101,8 @@
       <file leaf-file-name="main.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Frontend/www/assets/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="197" column="32" lean-forward="false" selection-start-line="197" selection-start-column="32" selection-end-line="197" selection-end-column="32" />
+            <state relative-caret-position="448">
+              <caret line="208" column="3" lean-forward="true" selection-start-line="208" selection-start-column="3" selection-end-line="208" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -118,6 +120,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>list-im</find>
+      <find>con</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,10 +134,10 @@
         <option value="$PROJECT_DIR$/Backend/main.js" />
         <option value="$PROJECT_DIR$/Backend/database.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/Frontend/src/main.js" />
+        <option value="$PROJECT_DIR$/Backend/api.js" />
         <option value="$PROJECT_DIR$/Backend/views/mainPage.ejs" />
         <option value="$PROJECT_DIR$/Frontend/www/assets/less/main.less" />
-        <option value="$PROJECT_DIR$/Backend/api.js" />
+        <option value="$PROJECT_DIR$/Frontend/src/main.js" />
       </list>
     </option>
   </component>
@@ -325,12 +329,12 @@
       <updated>1526466949915</updated>
       <workItem from="1526466952981" duration="12314000" />
       <workItem from="1526518053438" duration="79000" />
-      <workItem from="1526597344621" duration="18217000" />
+      <workItem from="1526597344621" duration="19405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30610000" />
+    <option name="totallyTimeSpent" value="31798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -482,6 +486,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -490,18 +502,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Frontend/src/main.js">
+    <entry file="file://$PROJECT_DIR$/Backend/views/mainPage.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="149" column="21" lean-forward="true" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
+        <state relative-caret-position="189">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/Frontend/www/assets/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="448">
+          <caret line="208" column="3" lean-forward="true" selection-start-line="208" selection-start-column="3" selection-end-line="208" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Frontend/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -514,26 +534,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/views/mainPage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Frontend/www/assets/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="197" column="32" lean-forward="false" selection-start-line="197" selection-start-column="32" selection-end-line="197" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Backend/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="165">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="17" />
           <folding />
         </state>
       </provider>
