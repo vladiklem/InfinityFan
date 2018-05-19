@@ -117,7 +117,6 @@ $(function () {
                            outputId = i;
                         }
                     }
-                    console.log(outputId);
                     var res_node = card.cloneNode(true);
                     res_node.getElementsByClassName('hero-name')[0].innerHTML = data[resList[outputId]].name;
                     res_node.getElementsByClassName("hero-ur")[0].innerHTML = "User Rating: " + userRat[outputId].toFixed(2);
@@ -151,11 +150,11 @@ function chooseOpponents() {
         op1 = contestMembers[0];
         op2 = contestMembers[1];
         for (var i = 0;i<Heroes.length;i++){
-            if(Heroes[i].id == op1){
+            if(Heroes[i].id === op1){
                 left_node.style.backgroundImage = "url(assets/heroe_avater/" + Heroes[i].img + ")";
                 document.getElementById('desc-left').innerHTML = Heroes[i].name;
             }
-            if (Heroes[i].id == op2) {
+            if (Heroes[i].id === op2) {
                 right_node.style.backgroundImage = "url(assets/heroe_avater/" + Heroes[i].img + ")";
                 document.getElementById('desc-right').innerHTML = Heroes[i].name;
             }
