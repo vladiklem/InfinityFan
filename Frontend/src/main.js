@@ -77,7 +77,6 @@ $(function () {
             }
         })
         API.getResultsList(function (err, results) {
-            console.log(results);
             for(var i = 0;i<results.length;i++){
                 id1 = results[i].id_1;
                 id2 = results[i].id_2;
