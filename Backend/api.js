@@ -22,9 +22,9 @@ exports.addFightRes = function (req, res) {
         winnerId:winner
     });
     // Видалення усіх коментарів
-    //  One_Battle.remove(function (err, comments) {
-    //    console.log("results removed")
-    // });
+     One_Battle.remove(function (err, comments) {
+       console.log("results removed")
+    });
 
     newRow.save(function (err) {
         if (!err) {
