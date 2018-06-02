@@ -119,7 +119,6 @@ $(function () {
             }
         })
         API.getResultsList(function (err, results) {
-            console.log(results);
             for(var i = 0;i<results.length;i++){
                 id1 = results[i].id_1;
                 id2 = results[i].id_2;
@@ -152,14 +151,18 @@ $(function () {
                         }
                     }
                 }
+
+                for(var i = 0;i<resList.length;i++){
+                    console.log(data[resList[i]].name + " - UserRating: " + userRat[i].toFixed(2) + ". Wins/Loses : " + wins[resList[i]] + '/' + loses[resList[i]]);
+                }
+
                 var output = randomResults(wins.length);
                 for(var j =0;j<3; j++){
                     for(var i =0;i<resList.length;i++) {
-                        if (resList[i] == output[j]){
+                        if (resList[i] === output[j]){
                            outputId = i;
                         }
                     }
-                    console.log(outputId);
                     var res_node = card.cloneNode(true);
                     res_node.getElementsByClassName('hero-name')[0].innerHTML = data[resList[outputId]].name;
                     res_node.getElementsByClassName("hero-ur")[0].innerHTML = "User Rating: " + userRat[outputId].toFixed(2);
@@ -193,11 +196,11 @@ function chooseOpponents() {
         op1 = contestMembers[0];
         op2 = contestMembers[1];
         for (var i = 0;i<Heroes.length;i++){
-            if(Heroes[i].id == op1){
+            if(Heroes[i].id === op1){
                 left_node.style.backgroundImage = "url(assets/heroe_avater/" + Heroes[i].img + ")";
                 document.getElementById('desc-left').innerHTML = Heroes[i].name;
             }
-            if (Heroes[i].id == op2) {
+            if (Heroes[i].id === op2) {
                 right_node.style.backgroundImage = "url(assets/heroe_avater/" + Heroes[i].img + ")";
                 document.getElementById('desc-right').innerHTML = Heroes[i].name;
             }
@@ -227,6 +230,41 @@ function randomResults(max) {
     }
     var res2 = [y1 , y2 ,y3];
     return res2;
+}
+
+function quickSort(arr){
+    var len = arr.length;
+    var left = 0;
+    var right = len;
+    if(left < right){
+        pivot = right;
+        partitionIndex = partition(arr, pivot, left, right);
+
+        //sort left and right
+        quickSort(arr, left, partitionIndex - 1);
+        quickSort(arr, partitionIndex + 1, right);
+    }
+    return arr;
+}
+
+function partition(arr, pivot, left, right){
+    var pivotValue = arr[pivot],
+        partitionIndex = left;
+
+    for(var i = left; i < right; i++){
+        if(arr[i] < pivotValue){
+            swap(arr, i, partitionIndex);
+            partitionIndex++;
+        }
+    }
+    swap(arr, right, partitionIndex);
+    return partitionIndex;
+}
+
+function swap(arr, i, j){
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
 },{"./API":1,"random-js":3}],3:[function(require,module,exports){
 /*jshint eqnull:true*/
